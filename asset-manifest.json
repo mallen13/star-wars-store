@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/static/js/main.ccb95efb.js",
+    "static/media/empire-logo.png": "/static/media/empire-logo.c24fb8e5668b06e206a5.png",
+    "static/media/credit-symbol.webp": "/static/media/credit-symbol.ec93086241e16f7b631d.webp",
+    "index.html": "/index.html",
+    "main.ccb95efb.js.map": "/static/js/main.ccb95efb.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ccb95efb.js"
+  ]
+}
