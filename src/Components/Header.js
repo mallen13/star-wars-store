@@ -33,7 +33,7 @@ const Header = ({openCart,cartCount}) => {
       <HStack align={['start','center']} justify='space-between' p='4' w='100%' maxW='1200px'>
 
         {/* Header Branding */}
-        <Link as={RouterLink} to='/' _hover={{textDecoration: 'none'}}>
+        <Link as={RouterLink} to='/star-wars-store/' _hover={{textDecoration: 'none'}}>
           <HStack align='start'>
 
             {/* Logo */}
@@ -52,7 +52,6 @@ const Header = ({openCart,cartCount}) => {
 
           </HStack>
         </Link>
-          
         
         {/* Cart Button */}
         <Center pos='relative'>

@@ -35,7 +35,7 @@ const CartDrawer = ({
 
   //re-route and close drawer on proceed to checkout
   const handleRouteChange = () => {
-    navigate('/checkout');
+    navigate('/star-wars-store/checkout');
     onClose()
   }
 

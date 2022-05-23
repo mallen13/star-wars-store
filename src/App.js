@@ -74,8 +74,8 @@ function App() {
 
         {/* Routes */}
         <Routes>
-          <Route path='/' element={<ProductGrid cart={cart} modifyCart={modifyCart} />} />
-          <Route path='/checkout' element={
+          <Route path='/star-wars-store/' element={<ProductGrid cart={cart} modifyCart={modifyCart} />} />
+          <Route path='/star-wars-store/checkout' element={
             <CheckoutPage cart={cart} clearCart={clearCart} modifyCart={modifyCart} />
           } />
         </Routes>

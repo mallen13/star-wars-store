@@ -196,7 +196,6 @@ const CheckoutForm = ({
           <NumberInputField 
             id='securityCode'
             maxLength={3}
-            mask='#'
             placeholder='CVV'
             {...register('securityCode', {
               required: 'Required',
