@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { Center,Flex,useDisclosure } from '@chakra-ui/react';
+import { Center,Flex,Heading,useDisclosure,Text } from '@chakra-ui/react';
 import CheckoutForm from './CheckoutForm';
 import OrderReviewPane from './OrderReviewPane';
 import CheckoutModal from './CheckoutModal';
@@ -62,36 +62,38 @@ const CheckoutPage = ({cart,modifyCart,clearCart}) => {
   }
 
   return (
-    <Center>
-      <Flex flexDir={['column','row']}>
+    <>
+      <Heading size='lg' align='center'>Checkout</Heading>
+      <Text w='100%' align='center'  mb={['0','10']}>(can enter dummy information and submit)</Text>
+      <Center>
+        <Flex flexDir={['column','row']}>
 
-        {/* Checkout Form */}
-        <CheckoutForm 
-          register={register} 
-          control={control} 
-          errors={errors} 
-          setShipping={setShipping}
-        />
+          {/* Checkout Form */}
+          <CheckoutForm 
+            register={register} 
+            control={control} 
+            errors={errors} 
+            setShipping={setShipping}
+          />
 
-        {/* Order Review Pane */}
-        <OrderReviewPane 
-          cart={cart} 
-          modifyCart={modifyCart}
-          shippingCost={shipping} 
-          isDirty={isDirty}
-          handleSubmit={handleSubmit}
-          onSubmit={onSubmit}
-          isSubmitting={isSubmitting} 
-          submitErr={submitErr}
-          setSubmitErr={setSubmitErr}
-        />
-      </Flex>
+          {/* Order Review Pane */}
+          <OrderReviewPane 
+            cart={cart} 
+            modifyCart={modifyCart}
+            shippingCost={shipping} 
+            isDirty={isDirty}
+            handleSubmit={handleSubmit}
+            onSubmit={onSubmit}
+            isSubmitting={isSubmitting} 
+            submitErr={submitErr}
+            setSubmitErr={setSubmitErr}
+          />
+        </Flex>
 
-      {/* Post-Submit Modal */}
-      <CheckoutModal isOpen={isOpen} onClose={onClose} onConfirm={startOver} />
-    </Center>
-    
-    
+        {/* Post-Submit Modal */}
+        <CheckoutModal isOpen={isOpen} onClose={onClose} onConfirm={startOver} />
+      </Center>
+    </>
   )
 }
 

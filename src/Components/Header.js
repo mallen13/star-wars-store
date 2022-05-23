@@ -29,7 +29,7 @@ const Header = ({openCart,cartCount}) => {
   )
 
   return(
-    <Center mb='10'>
+    <Center mb='5'>
       <HStack align={['start','center']} justify='space-between' p='4' w='100%' maxW='1200px'>
 
         {/* Header Branding */}

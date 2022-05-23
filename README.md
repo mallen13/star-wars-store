@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+#Empire Ships E-Commerce Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Check it out at https://mallen13.github.io/star-wars-store/
 
-## Available Scripts
+##About
+Empire ships is an original front-end e-commerce application created using React and Chakra-UI. First, users can view a grid of products, view a modal with product detials, then add the product to the cart. Once the cart drawer is loaded, product quantities can be changed and the user can navigate to the checkout page. The checkout page makes use of the react-hook-form library to collect and validate user inputs after submission. 
 
-In the project directory, you can run:
+##Development
+The software development started with gathering project requirements, expectations, and parameters. A big focus was on responsive mobile-first design. Next, the project was drafted using Figma then coded by following the project designs. 
 
-### `npm start`
+The project was coded, then development finished with writing some automated unit/integration tests with Jest and React-Testing-Library. A big focus was on creating components that were re-usable and easy to maintain. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+After design and development, deployment was the final step. GH-pages is currently sufficient for hosting as it meets the project budget and allows for simple front-end deployment. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##Technologies
+React was used since it allows for fast modular development. It makes projects easier to scale and creating of DOM-nodes very easy.
 
-### `npm test`
+As for state-management, the project did not contain a lot of components, so prop drilling was sufficient. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Styling was doine using Charka-UI. Althought the project is not as lightweight as some, the project will always be small enough that it won't make a noticable performance difference. Chakra is a React UI component library that is great for quickly creating complex components like modals, menus, alerts, toasts, and drawers. 
 
-### `npm run build`
+##Roadmap
+After deployment, the project will be maintained and updated as needed. Down the road, additional features could be implemented:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-additional product categories
+-implementing stripe or square for payments
+-sorting and searching of products
+-useContext or redux for state management
+-100% test coverage

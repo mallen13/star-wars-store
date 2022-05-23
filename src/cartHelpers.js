@@ -50,7 +50,6 @@ export const subtractFromCart = (cart,product,index) => {
 //remove from cart helper
 export const removeFromCart = (cart,product,index) => {
  //modify cart
- console.log(typeof product.total)
  cart.numItems -= product.quantity;
  cart.subtotal -= product.total;
  cart.items.splice(index,1);

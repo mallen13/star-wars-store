@@ -10,11 +10,12 @@ import {
     NumberInputField,
     Radio,
     RadioGroup,
-    Text
+    Text,
 } from '@chakra-ui/react';
 import { Controller } from 'react-hook-form';
 import NumberFormat from 'react-number-format';
 import CreditAmount from '../reusable/CreditAmount';
+
 
 const CheckoutForm = ({
   register,
@@ -22,12 +23,12 @@ const CheckoutForm = ({
   errors,
   setShipping
 }) => (
-    <Box p='3'>
+    <Box p='5'>
       <form>
-
       {/* Shipping Info */}
-      <Heading size='med'>Shipping Information</Heading>
-      <Text as='i' fontSize='14px'>Enter dummy information</Text>
+      <Heading size='med' mb='3' align='center'>
+        Shipping Information
+      </Heading>
 
       {/* Name */}
       <FormControl isInvalid={errors.shippingName}>
@@ -80,18 +81,25 @@ const CheckoutForm = ({
       </HStack>
 
       {/* Shipping Method */}
-      <Heading size='med'>Shipping Method</Heading>
+      <Heading size='med' mb='3' mt='5' >Shipping Method</Heading>
 
       <FormControl>
-        <RadioGroup onChange={setShipping} defaultValue='400'>
+        <RadioGroup 
+          onChange={setShipping} 
+          defaultValue='400' 
+          display='flex'
+          flexDir={['column','row']}
+          justifyContent='space-between'
+          alignItems='flex-start'
+          >
 
           {/* Option 1 */}
-          <Radio value='400'>
+          <Radio value='400' mb='3'>
             <HStack>
             <Text>Standard</Text>
             <CreditAmount amount='400' fontWeight='bold'/>
             </HStack>
-            <Text>Shipped within 2-3 business days.</Text>
+            <Text>Shipped within 2-3 days</Text>
           </Radio>
 
           {/* Option 2 */}
@@ -106,8 +114,7 @@ const CheckoutForm = ({
       </FormControl>
 
       {/* Shipping Info */}
-      <Heading size='med'>Payment Information</Heading>
-      <Text as='i' fontSize='14px'>Enter dummy information</Text>
+      <Heading size='med' mb='3' mt='10' >Payment Information</Heading>
 
       {/* Name */}
       <FormControl isInvalid={errors.buyerName}>
@@ -130,7 +137,7 @@ const CheckoutForm = ({
               <NumberFormat
                 customInput={Input}
                 format='#### #### #### ####' 
-                mask=''
+                mask='#'
                 placeholder='Card Number'
                 {...field}
                 id='cardNum'
@@ -162,7 +169,7 @@ const CheckoutForm = ({
                   id='cardExpire'
                   customInput={Input}
                   format='##/##' 
-                  mask=''
+                  mask='#'
                   placeholder='MM/YY'
                   {...field}
                 />
@@ -189,6 +196,7 @@ const CheckoutForm = ({
           <NumberInputField 
             id='securityCode'
             maxLength={3}
+            mask='#'
             placeholder='CVV'
             {...register('securityCode', {
               required: 'Required',

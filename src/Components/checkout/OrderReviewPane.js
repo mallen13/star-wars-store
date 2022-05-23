@@ -28,13 +28,13 @@ const OrderReviewPane = ({
     <VStack
         w={['100%','400px']} 
         minH={[null,'calc(100vh - 122px)']}
-        align='start' 
+        align='center' 
         bg={[null,'#F3FBFF']} 
-        p='3'
+        p='5'
         >
 
         {/* Header */}
-        <Heading size='med'>Order Summary</Heading>
+        <Heading size='med' w='100%' textAlign={['left','center']}>Order Summary</Heading>
 
         {/* Items */}
         <VStack w='100%' maxH='400px' overflow='auto' spacing='7'>
@@ -42,7 +42,7 @@ const OrderReviewPane = ({
         </VStack>
 
         {/* Cost Breakdown */}
-        <Divider />
+        <Divider/>
         <HStack justify='space-between' w='100%'>
             <Text>Subtotal:</Text>
             <CreditAmount amount={cart.subtotal}/>
@@ -72,10 +72,9 @@ const OrderReviewPane = ({
             isDisabled={ cart.subtotal > 0 && isDirty ? false : true}
             isLoading={isSubmitting}
             loadingText='Processing'
+            w='90%'
         >Place Order
         </Button>
-
-        <Text as='i' fontSize='14px'>Give it a try.</Text>
 
         {/* Err Alert */}
         <Alert status='error' flexDir='row' display={submitErr.display}>

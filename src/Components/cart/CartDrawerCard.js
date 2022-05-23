@@ -10,14 +10,34 @@ import { Dash,Plus } from 'react-bootstrap-icons';
 import CreditAmount from '../reusable/CreditAmount';
 
 const CartDrawerCard = ({item,modifyCart}) => (
-    <HStack w='100%' align='start' justify='space-between'>
-        <HStack align='start'>
-            {/* item image */}
-            <Image src={item.image} boxSize='75' borderRadius='md' bg='gray.200' alt='Product'/>
+    <VStack 
+        w='100%' 
+        align='start'
+        justify='space-between' 
+        p='2' 
+        bg={['gray.100','none']} 
+        mt={0}
+    >
+        <HStack w='100%' justify='space-between'>
+            {/* Name */}
+            <Text maxW='60%' fontWeight='bold'>{item.name}</Text>
 
-            {/* item name, quantity change buttons */}
-            <VStack align='start'>
-                <Text>{item.name}</Text>
+            {/*Total*/}
+            <CreditAmount amount={item.total} />
+        </HStack>
+        
+        <HStack w='100%' justify='space-between'>
+            {/* item image */}
+            <Image 
+                src={item.image} 
+                boxSize='75' 
+                borderRadius='md' 
+                bg='gray.200' 
+                alt='Product'
+                w='120px'
+            />
+            <VStack>
+                {/* Quantity Buttons */}
                 <HStack>
                     {/* Decrese Quantity */}
                     <IconButton 
@@ -36,21 +56,17 @@ const CartDrawerCard = ({item,modifyCart}) => (
                         onClick={()=> modifyCart(item,'add')} 
                     />
                 </HStack>
+
+                {/* Remove Button */}
+                <Button 
+                    onClick={ ()=> modifyCart(item,'remove') } 
+                    variant='link' 
+                    color='blue'
+                    >Remove
+                </Button>
             </VStack>
         </HStack>
-        
-        {/* Total/Remove button */}
-        <VStack align='end' justify='space-between' minH='75px'>
-            <CreditAmount amount={item.total} />
-            <Button 
-                onClick={ ()=> modifyCart(item,'remove') } 
-                variant='link' 
-                color='blue'
-                >Remove
-            </Button>
-        </VStack>
-      
-    </HStack>
+    </VStack>
 )
 
 export default CartDrawerCard;

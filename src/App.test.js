@@ -19,17 +19,19 @@ describe('App Rendering', ()=> {
     
     it('displays error boundary when an error is thrown', () => {
         const ThrowErr = () => {
-            throw new Error('Test')
+            throw new Error('You have error ID10T');
         }
+
+       const spy = jest.spyOn(console, 'error');
+       spy.mockImplementation(()=> null);
     
         render(
             <ErrorBoundary fallback>
-                <ThrowErr />
+                <ThrowErr />  
             </ErrorBoundary>
         )
-    
+
         expect(screen.getByText(/Something went wrong./i)).toBeInTheDocument();
-    
     })
 })
 

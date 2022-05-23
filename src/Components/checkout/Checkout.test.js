@@ -50,9 +50,12 @@ describe('Checkout Page', ()=> {
             //enters inputs
             const inputs = getInputs(screen);
             enterInputs(userEvent,inputs);
+
+            const consoleLog = jest.spyOn(console, 'log');
+            consoleLog.mockImplementation(()=> null);
     
             //submits
-            const submitBtn = screen.getByText('Place Order')
+            const submitBtn = screen.getByText('Place Order');
             userEvent.click(submitBtn);
     
             //advance timers / expect modal to display

@@ -73,18 +73,18 @@ const CartDrawer = ({
 
         {/* Footer */}
         <DrawerFooter flexDir='column'>
-          <Divider />
+          <Divider m='2'/>
 
           {/* Subtotal */}
-          <HStack justify='space-between' w='100%'>
+          <HStack justify='space-between' w='100%' m='2'>
             <Heading size='med'>Subtotal:</Heading>
             <CreditAmount amount={cart.subtotal}/>
           </HStack>
 
           {/* Shipping Info */}
-          <HStack color='gray.600'>
+          <HStack color='gray.600' w='100%' m='2' align='start'>
             <BoxSeam size='25' />
-            <Text>Shipping + taxes calculated at checkout.</Text>
+            <Text>Shipping and taxes calculated at checkout.</Text>
           </HStack>
           
           
@@ -93,6 +93,8 @@ const CartDrawer = ({
             ref={firstFocus} 
             isDisabled={cart.subtotal > 0 ? false : true}
             colorScheme='blue'
+            w={['100%', '300px']}
+            m='2'
           >
             Proceed to Checkout
           </Button>

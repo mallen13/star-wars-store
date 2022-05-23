@@ -3,6 +3,7 @@ import ships from '../../ships';
 import {
   Button,
   Center,
+  Heading,
   Image,
   Text,
   useDisclosure,
@@ -34,19 +35,22 @@ const ProductGrid = ({modifyCart}) => {
       <CreditAmount amount={product.price} />
       <Button 
         onClick={ ()=> modifyCart(product,'add') } 
-        mt='3' 
+        mt='2' 
         mb='3' 
         colorScheme='blue'
+        w={['100%','auto']}
       >Add to Cart</Button>
-      <Button onClick={ ()=> openModal(product) } variant='link'>View Item</Button>
+      <Button onClick={ ()=> openModal(product) } variant='link' w={['100%','auto']}>View Item</Button>
     </WrapItem>
   ))
 
   return (
     <>
+      <Heading size='lg' align='center' mb={['0','10']}>Star Ships</Heading>
+
       {/* Products */}
       <Center w='100%' p='3'>
-        <Wrap w='100%' maxW='1200px' justify={['center','space-between']} spacing='3'>
+        <Wrap w='100%' maxW='1120px' justify={['center','start']} spacing='10'>
           {mappedProducts}
         </Wrap>
       </Center>
