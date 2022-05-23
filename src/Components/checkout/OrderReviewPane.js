@@ -50,19 +50,19 @@ const OrderReviewPane = ({
 
         <HStack justify='space-between' w='100%'>
             <Text>Shipping Cost:</Text>
-            <CreditAmount amount={ cart.subtotal > 0 ? shippingCost : 0}/>
+            <CreditAmount amount={cart.subtotal > 0 ? shippingCost : 0}/>
         </HStack>
 
         <HStack justify='space-between' w='100%'>
             <Text>Tax:</Text>
-            <CreditAmount amount={ cart.subtotal > 0 ? cart.subtotal * 0.10 : 0}/>
+            <CreditAmount amount={cart.subtotal > 0 ? Math.round((cart.subtotal + shippingCost) * .10): 0}/>
         </HStack>
 
         {/* Total */}
         <Divider />
         <HStack justify='space-between' w='100%'>
             <Heading size='med'>Order Total:</Heading>
-            <CreditAmount amount={ cart.subtotal > 0 ? (cart.subtotal + parseInt(shippingCost)) * 1.10 : 0}/>
+            <CreditAmount amount={cart.subtotal > 0 ? Math.round((cart.subtotal + shippingCost) * 1.10) : 0}/>
         </HStack>
 
         {/* Submit Button */}

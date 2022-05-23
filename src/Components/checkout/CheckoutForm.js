@@ -97,7 +97,7 @@ const CheckoutForm = ({
           <Radio value='400' mb='3'>
             <HStack>
             <Text>Standard</Text>
-            <CreditAmount amount='400' fontWeight='bold'/>
+            <CreditAmount amount={400} fontWeight='bold'/>
             </HStack>
             <Text>Shipped within 2-3 days</Text>
           </Radio>
@@ -106,7 +106,7 @@ const CheckoutForm = ({
           <Radio value='700'>
             <HStack>
             <Text>Lightspeed</Text>
-            <CreditAmount amount='700' fontWeight='bold'/>
+            <CreditAmount amount={700} fontWeight='bold'/>
             </HStack>
             <Text>Shipped within 24 hours</Text>
           </Radio>
